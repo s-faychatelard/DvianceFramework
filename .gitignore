@@ -1,0 +1,5 @@
+DerivedData
+.DS_Store
+*.xcuserstate
+*.xcscheme
+xcschememanagement.plist

@@ -1,0 +1,396 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E40F229617253D2C0004757F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40F229517253D2C0004757F /* UIKit.framework */; };
+		E40F229817253D2C0004757F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40F229717253D2C0004757F /* Foundation.framework */; };
+		E40F229A17253D2C0004757F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40F229917253D2C0004757F /* CoreGraphics.framework */; };
+		E40F22A017253D2C0004757F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E40F229E17253D2C0004757F /* InfoPlist.strings */; };
+		E40F22A217253D2C0004757F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E40F22A117253D2C0004757F /* main.m */; };
+		E40F22A617253D2C0004757F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E40F22A517253D2C0004757F /* AppDelegate.m */; };
+		E40F22A817253D2C0004757F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E40F22A717253D2C0004757F /* Default.png */; };
+		E40F22AA17253D2C0004757F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E40F22A917253D2C0004757F /* Default@2x.png */; };
+		E40F22AC17253D2C0004757F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E40F22AB17253D2C0004757F /* Default-568h@2x.png */; };
+		E40F22AF17253D2C0004757F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E40F22AE17253D2C0004757F /* ViewController.m */; };
+		E40F22B217253D2C0004757F /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = E40F22B017253D2C0004757F /* ViewController_iPhone.xib */; };
+		E40F22B517253D2C0004757F /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E40F22B317253D2C0004757F /* ViewController_iPad.xib */; };
+		E40F22CB17253FB40004757F /* Dviance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40F22CA17253FB40004757F /* Dviance.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E40F22BF17253D330004757F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E40F22BB17253D330004757F /* Dviance.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E40F226B17253C3E0004757F;
+			remoteInfo = Dviance;
+		};
+		E40F22CF172558090004757F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E40F22BB17253D330004757F /* Dviance.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E40F226A17253C3E0004757F;
+			remoteInfo = Dviance;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E40F229217253D2C0004757F /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E40F229517253D2C0004757F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E40F229717253D2C0004757F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E40F229917253D2C0004757F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E40F229D17253D2C0004757F /* Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
+		E40F229F17253D2C0004757F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E40F22A117253D2C0004757F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E40F22A317253D2C0004757F /* Test-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Test-Prefix.pch"; sourceTree = "<group>"; };
+		E40F22A417253D2C0004757F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E40F22A517253D2C0004757F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E40F22A717253D2C0004757F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E40F22A917253D2C0004757F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E40F22AB17253D2C0004757F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E40F22AD17253D2C0004757F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E40F22AE17253D2C0004757F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E40F22B117253D2C0004757F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
+		E40F22B417253D2C0004757F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		E40F22BB17253D330004757F /* Dviance.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Dviance.xcodeproj; path = ../Dviance/Dviance.xcodeproj; sourceTree = "<group>"; };
+		E40F22CA17253FB40004757F /* Dviance.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dviance.framework; path = "DerivedData/Test/Build/Products/Debug-iphonesimulator/Dviance.framework"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E40F228F17253D2C0004757F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E40F22CB17253FB40004757F /* Dviance.framework in Frameworks */,
+				E40F229617253D2C0004757F /* UIKit.framework in Frameworks */,
+				E40F229817253D2C0004757F /* Foundation.framework in Frameworks */,
+				E40F229A17253D2C0004757F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E40F228917253D2B0004757F = {
+			isa = PBXGroup;
+			children = (
+				E40F22BB17253D330004757F /* Dviance.xcodeproj */,
+				E40F229B17253D2C0004757F /* Test */,
+				E40F229417253D2C0004757F /* Frameworks */,
+				E40F229317253D2C0004757F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E40F229317253D2C0004757F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E40F229217253D2C0004757F /* Test.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E40F229417253D2C0004757F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E40F22CA17253FB40004757F /* Dviance.framework */,
+				E40F229517253D2C0004757F /* UIKit.framework */,
+				E40F229717253D2C0004757F /* Foundation.framework */,
+				E40F229917253D2C0004757F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E40F229B17253D2C0004757F /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				E40F22A417253D2C0004757F /* AppDelegate.h */,
+				E40F22A517253D2C0004757F /* AppDelegate.m */,
+				E40F22AD17253D2C0004757F /* ViewController.h */,
+				E40F22AE17253D2C0004757F /* ViewController.m */,
+				E40F22B017253D2C0004757F /* ViewController_iPhone.xib */,
+				E40F22B317253D2C0004757F /* ViewController_iPad.xib */,
+				E40F229C17253D2C0004757F /* Supporting Files */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		E40F229C17253D2C0004757F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E40F229D17253D2C0004757F /* Test-Info.plist */,
+				E40F229E17253D2C0004757F /* InfoPlist.strings */,
+				E40F22A117253D2C0004757F /* main.m */,
+				E40F22A317253D2C0004757F /* Test-Prefix.pch */,
+				E40F22A717253D2C0004757F /* Default.png */,
+				E40F22A917253D2C0004757F /* Default@2x.png */,
+				E40F22AB17253D2C0004757F /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E40F22BC17253D330004757F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E40F22C017253D330004757F /* Dviance.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E40F229117253D2C0004757F /* Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E40F22B817253D2C0004757F /* Build configuration list for PBXNativeTarget "Test" */;
+			buildPhases = (
+				E40F228E17253D2C0004757F /* Sources */,
+				E40F228F17253D2C0004757F /* Frameworks */,
+				E40F229017253D2C0004757F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E40F22D0172558090004757F /* PBXTargetDependency */,
+			);
+			name = Test;
+			productName = Test;
+			productReference = E40F229217253D2C0004757F /* Test.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E40F228A17253D2B0004757F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = dviance;
+			};
+			buildConfigurationList = E40F228D17253D2B0004757F /* Build configuration list for PBXProject "Test" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E40F228917253D2B0004757F;
+			productRefGroup = E40F229317253D2C0004757F /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E40F22BC17253D330004757F /* Products */;
+					ProjectRef = E40F22BB17253D330004757F /* Dviance.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				E40F229117253D2C0004757F /* Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E40F22C017253D330004757F /* Dviance.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Dviance.framework;
+			remoteRef = E40F22BF17253D330004757F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E40F229017253D2C0004757F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E40F22A017253D2C0004757F /* InfoPlist.strings in Resources */,
+				E40F22A817253D2C0004757F /* Default.png in Resources */,
+				E40F22AA17253D2C0004757F /* Default@2x.png in Resources */,
+				E40F22AC17253D2C0004757F /* Default-568h@2x.png in Resources */,
+				E40F22B217253D2C0004757F /* ViewController_iPhone.xib in Resources */,
+				E40F22B517253D2C0004757F /* ViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E40F228E17253D2C0004757F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E40F22A217253D2C0004757F /* main.m in Sources */,
+				E40F22A617253D2C0004757F /* AppDelegate.m in Sources */,
+				E40F22AF17253D2C0004757F /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E40F22D0172558090004757F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Dviance;
+			targetProxy = E40F22CF172558090004757F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E40F229E17253D2C0004757F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E40F229F17253D2C0004757F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E40F22B017253D2C0004757F /* ViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E40F22B117253D2C0004757F /* en */,
+			);
+			name = ViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		E40F22B317253D2C0004757F /* ViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E40F22B417253D2C0004757F /* en */,
+			);
+			name = ViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E40F22B617253D2C0004757F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: FAY-CHATELARD Sylvain (TK975X78D8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "A8C027F7-DADF-4E63-A748-8A0C0F4CA8BE";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E40F22B717253D2C0004757F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: FAY-CHATELARD Sylvain (TK975X78D8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "A8C027F7-DADF-4E63-A748-8A0C0F4CA8BE";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E40F22B917253D2C0004757F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Dviance/DerivedData/Dviance/Build/Products/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/DerivedData/Test/Build/Products/Debug-iphonesimulator\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Test/Test-Prefix.pch";
+				INFOPLIST_FILE = "Test/Test-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E40F22BA17253D2C0004757F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Dviance/DerivedData/Dviance/Build/Products/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/DerivedData/Test/Build/Products/Debug-iphonesimulator\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Test/Test-Prefix.pch";
+				INFOPLIST_FILE = "Test/Test-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E40F228D17253D2B0004757F /* Build configuration list for PBXProject "Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E40F22B617253D2C0004757F /* Debug */,
+				E40F22B717253D2C0004757F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E40F22B817253D2C0004757F /* Build configuration list for PBXNativeTarget "Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E40F22B917253D2C0004757F /* Debug */,
+				E40F22BA17253D2C0004757F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E40F228A17253D2B0004757F /* Project object */;
+}
