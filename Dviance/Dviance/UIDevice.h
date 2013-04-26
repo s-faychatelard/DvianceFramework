@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 
-#ifdef UI_DEVICE_H
+#ifndef UI_DEVICE_H
 #define UI_DEVICE_H
 
 ////
