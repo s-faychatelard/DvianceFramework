@@ -35,7 +35,12 @@
     str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"%@", str);
     
-    SQLRequest * request = [SQLRequest requestWithSQL:@"INSERT INTO Table values(%d, %@);"];
+    SQLRequest * request = [SQLRequest requestWithSQL:@"INSERT INTO Table values(%d, %@, %s, %g);", 1, @"toto", "tutu", 1.8];
+    SQLDatabase * database = [SQLDatabase databaseWithFile:@"file"];
+    NSDictionary *res = [database request:request];
+    
+    // Throw an exception 'Not yet implemented'
+    //[database close];
 }
 
 - (void)didReceiveMemoryWarning
