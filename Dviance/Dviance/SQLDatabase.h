@@ -10,12 +10,10 @@
 
 #import "SQLRequest.h"
 
-@class SQLRequest;
-
 @interface SQLDatabase : NSObject
 
 +(id)databaseWithFile:(NSString*)file;
 -(void)close;
--(NSDictionary*)execRequest:(SQLRequest*)request;
+-(NSDictionary*)request:(SQLRequest*)request;
 
 @end
