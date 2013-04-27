@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E409549A172AD5B40008BA47 /* SQLDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = E4095498172AD5B40008BA47 /* SQLDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E409549B172AD5B40008BA47 /* SQLDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E4095499172AD5B40008BA47 /* SQLDatabase.m */; };
+		E409549E172AD66D0008BA47 /* SQLRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = E409549C172AD66D0008BA47 /* SQLRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E409549F172AD66D0008BA47 /* SQLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E409549D172AD66D0008BA47 /* SQLRequest.m */; };
+		E40954A3172ADDE00008BA47 /* NSString.h in Headers */ = {isa = PBXBuildFile; fileRef = E40954A1172ADDE00008BA47 /* NSString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E40954A4172ADDE00008BA47 /* NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = E40954A2172ADDE00008BA47 /* NSString.m */; };
 		E40F227217253C3E0004757F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E40F227017253C3E0004757F /* InfoPlist.strings */; };
 		E40F228017253C710004757F /* UIAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = E40F227917253C710004757F /* UIAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E40F228117253C710004757F /* UIAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = E40F227A17253C710004757F /* UIAlert.m */; };
@@ -23,6 +29,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E4095498172AD5B40008BA47 /* SQLDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLDatabase.h; sourceTree = "<group>"; };
+		E4095499172AD5B40008BA47 /* SQLDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLDatabase.m; sourceTree = "<group>"; };
+		E409549C172AD66D0008BA47 /* SQLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLRequest.h; sourceTree = "<group>"; };
+		E409549D172AD66D0008BA47 /* SQLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLRequest.m; sourceTree = "<group>"; };
+		E40954A1172ADDE00008BA47 /* NSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString.h; sourceTree = "<group>"; };
+		E40954A2172ADDE00008BA47 /* NSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString.m; sourceTree = "<group>"; };
 		E40F226B17253C3E0004757F /* Dviance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Dviance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E40F226F17253C3E0004757F /* Dviance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dviance-Info.plist"; sourceTree = "<group>"; };
 		E40F227117253C3E0004757F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -52,6 +64,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E4095497172AD2670008BA47 /* SQL */ = {
+			isa = PBXGroup;
+			children = (
+				E4095498172AD5B40008BA47 /* SQLDatabase.h */,
+				E4095499172AD5B40008BA47 /* SQLDatabase.m */,
+				E409549C172AD66D0008BA47 /* SQLRequest.h */,
+				E409549D172AD66D0008BA47 /* SQLRequest.m */,
+			);
+			name = SQL;
+			sourceTree = "<group>";
+		};
+		E40954A0172ADDC30008BA47 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				E40954A1172ADDE00008BA47 /* NSString.h */,
+				E40954A2172ADDE00008BA47 /* NSString.m */,
+			);
+			name = String;
+			sourceTree = "<group>";
+		};
 		E40F225E17253C3E0004757F = {
 			isa = PBXGroup;
 			children = (
@@ -75,8 +107,10 @@
 				E40F22CC172541450004757F /* LoadableCategory.h */,
 				E40F228817253CC60004757F /* UI */,
 				E40F228717253C750004757F /* System */,
+				E40954A0172ADDC30008BA47 /* String */,
 				E4D33ABA1726B2EB007885D7 /* Data */,
 				E40F22D1172558AB0004757F /* Network */,
+				E4095497172AD2670008BA47 /* SQL */,
 				E40F226E17253C3E0004757F /* Supporting Files */,
 			);
 			path = Dviance;
@@ -143,6 +177,9 @@
 				E4D33AB717269E3C007885D7 /* NSURLConnection.h in Headers */,
 				E4D33ABD1726B2FD007885D7 /* NSData.h in Headers */,
 				E40F228517253C710004757F /* UIWindow.h in Headers */,
+				E409549A172AD5B40008BA47 /* SQLDatabase.h in Headers */,
+				E40954A3172ADDE00008BA47 /* NSString.h in Headers */,
+				E409549E172AD66D0008BA47 /* SQLRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +297,9 @@
 				E40F228617253C710004757F /* UIWindow.m in Sources */,
 				E4D33AB917269E65007885D7 /* NSURLConnection.m in Sources */,
 				E4D33ABE1726B2FD007885D7 /* NSData.m in Sources */,
+				E409549B172AD5B40008BA47 /* SQLDatabase.m in Sources */,
+				E409549F172AD66D0008BA47 /* SQLRequest.m in Sources */,
+				E40954A4172ADDE00008BA47 /* NSString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

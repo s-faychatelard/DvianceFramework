@@ -11,4 +11,8 @@
 #import <Dviance/UIAlert.h>
 
 #import <Dviance/NSData.h>
+#import <Dviance/NSString.h>
 #import <Dviance/NSURLConnection.h>
+
+#import <Dviance/SQLDatabase.h>
+#import <Dviance/SQLRequest.h>

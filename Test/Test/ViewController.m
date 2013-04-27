@@ -22,6 +22,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //@"INSERT INTO Table values(%d, %@, %c)", 1, @"tutu", 'd'
 	
     [_deviceNameLbl setText:[UIDevice deviceModelName]];
     [_osVersionLbl setText:[NSString stringWithFormat:@"%.1f", [UIDevice osVersion]]];
@@ -32,6 +34,8 @@
     data = [[NSData alloc] initWithContentOfURL:[NSURL URLWithString:@"http://apple.com"] andGETData:nil];
     str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"%@", str);
+    
+    SQLRequest * request = [SQLRequest requestWithSQL:@"INSERT INTO Table values(%d, %@);"];
 }
 
 - (void)didReceiveMemoryWarning
