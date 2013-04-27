@@ -10,6 +10,9 @@
 
 @interface SQLRequest : NSObject
 
+@property (nonatomic, strong, getter = request) NSString *requestString;
+@property (nonatomic, strong) NSMutableArray *arguments;
+
 +(id)requestWithSQL:(NSString*)sql, ...;
 
 //-(id)requestInsertInto:(NSString*)table andValues:...;
