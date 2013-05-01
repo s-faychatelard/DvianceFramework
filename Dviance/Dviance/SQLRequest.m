@@ -93,10 +93,9 @@
                 case 'f': // %f
                     arg = [NSNumber numberWithDouble:va_arg(args, double)];
                     break;
-                    
+
                 case 'g': // %g
                     // warning: second argument to 'va_arg' is of promotable type 'float'; this va_arg has undefined behavior because arguments will be promoted to 'double'
-// TODO error if pass an integer
                     arg = [NSNumber numberWithFloat:(float)(va_arg(args, double))];
                     break;
                     
@@ -132,6 +131,10 @@
             {
                 [requestString replaceCharactersInRange:NSMakeRange(occurenceRange.location - ([sql length] - [requestString length]), 2) withString:@"?"];
                 [[request arguments] addObject:arg];
+            }
+            else
+            {
+                [NSException exceptionWithName:@"Argument error" reason:@"Cannot parse argument" userInfo:nil];
             }
             
             @try

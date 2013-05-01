@@ -13,6 +13,9 @@
 @property (nonatomic, strong, getter = request) NSString *requestString;
 @property (nonatomic, strong) NSMutableArray *arguments;
 
+/**
+ * WARNING : Cast int to float or double if needed !
+ */
 +(id)requestWithSQL:(NSString*)sql, ...;
 
 //-(id)requestInsertInto:(NSString*)table andValues:...;

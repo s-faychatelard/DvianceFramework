@@ -37,7 +37,7 @@
 - (NSDictionary*)request:(SQLRequest*)request
 {
     if (!_isOpen) [NSException raise:@"No database open" format:@"You must use +databaseWithFile: to create a SQLDatabase"];
-    
+
     _request = request;
     return nil;
 }
