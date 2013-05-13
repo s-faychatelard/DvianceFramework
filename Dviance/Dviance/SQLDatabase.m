@@ -23,6 +23,12 @@
     
     return nil;
 }
+
+- (void)dealloc
+{
+    [self close];
+}
+
 + (id)databaseWithFile:(NSString*)file
 {
     SQLDatabase * database = [SQLDatabase alloc];
