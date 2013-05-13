@@ -56,7 +56,12 @@
 
 - (void)close
 {
-    [NSException raise:@"Not yet implemented" format:@"close is not implemented"];
+    int res = 0;
+    
+    res = sqlite3_close(_sqlDatabase);
+    
+    if (res != SQLITE_OK)
+        [NSException raise:@"Cannot close SQLDatabase" format:@"An error occured, SQLite code %d, %s", sqlite3_errcode(_sqlDatabase), sqlite3_errmsg(_sqlDatabase)];
 }
 
 - (NSDictionary*)request:(SQLRequest*)request
