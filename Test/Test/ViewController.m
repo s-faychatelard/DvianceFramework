@@ -35,9 +35,16 @@
     str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"%@", str);
     
-    SQLRequest * request = [SQLRequest requestWithSQL:@"INSERT INTO Table values(%f, %@, %s, %g);", (double)1, @"toto", "tutu", (float)1];
-    SQLDatabase * database = [SQLDatabase databaseWithFile:@"file"];
+    NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSLog(@"BundlePath : %@", cachePath);
+    
+    NSString *dbFile = [NSString stringWithFormat:@"%@/database.db", cachePath];
+    
+    SQLRequest * request = [SQLRequest requestWithSQL:@"CREATE TABLE IF NOT EXISTS 'FreeStroke.Record' ( id INTEGER PRIMARY KEY ASC AUTOINCREMENT, name TEXT, creation_date TEXT, gesture TEXT, command TEXT, command_type INTEGER, isCommandActive INTEGER DEFAULT 1, isGestureActive INTEGER DEFAULT 1, isDeleted INTEGER DEFAULT 0);;"];
+    SQLDatabase * database = [SQLDatabase databaseWithFile:dbFile];
     NSDictionary *res = [database request:request];
+    
+    NSLog(@"%@", res);
     
     // Throw an exception 'Not yet implemented'
     //[database close];

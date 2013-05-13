@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSMutableArray *arguments;
 
 @property (readwrite) sqlite3 *sqlDatabase;
+@property (readwrite) sqlite3_stmt *statement;
 
 @end
 
@@ -67,6 +68,70 @@
 - (NSDictionary*)request:(SQLRequest*)request
 {
     _request = request;
+    
+    int res = 0;
+    
+    res = sqlite3_prepare_v2(_sqlDatabase, [[request request] UTF8String], [[request request] length], &_statement, NULL);
+    
+    if (res != SQLITE_OK)
+    {
+        sqlite3_finalize(_statement);
+        [NSException raise:@"Cannot prepare SQLRequest" format:@"An error occured, SQLite code %d, %s", sqlite3_errcode(_sqlDatabase), sqlite3_errmsg(_sqlDatabase)];
+    }
+    
+    do
+    {
+        res = sqlite3_step(_statement);
+        if(res == SQLITE_ROW)
+        {
+            int type = 0;
+            int nbColumn = 0;
+            
+            nbColumn = sqlite3_column_count(_statement);
+            
+            for (int i=0; i<nbColumn; i++)
+            {
+                //sqlite3_column_name(<#sqlite3_stmt *#>, <#int N#>)
+                type = sqlite3_column_type(_statement, i);
+                
+                switch (type) {
+                        
+                    case SQLITE_INTEGER:
+                        NSLog(@"INTEGER");
+                        break;
+                        
+                    case SQLITE_FLOAT:
+                        NSLog(@"FLOAT");
+                        break;
+                        
+                    case SQLITE_BLOB:
+                        NSLog(@"BLOB");
+                        break;
+                        
+                    case SQLITE_NULL:
+                        NSLog(@"NULL");
+                        break;
+                        
+                    case SQLITE_TEXT:
+                        NSLog(@"TEXT");
+                        break;
+                        
+                    default:
+                        [NSException raise:@"Unknown type" format:@"Unknown type %d for result at column %d", type, i];
+                        break;
+                }
+            }
+        }
+        else if(res != SQLITE_DONE)
+        {
+            sqlite3_finalize(_statement);
+            [NSException raise:@"Cannot get result of SQLRequest" format:@"An error occured, SQLite code %d, %s", sqlite3_errcode(_sqlDatabase), sqlite3_errmsg(_sqlDatabase)];
+        }
+    }
+    while(res != SQLITE_DONE);
+    
+    sqlite3_finalize(_statement);
+    
     return nil;
 }
 
