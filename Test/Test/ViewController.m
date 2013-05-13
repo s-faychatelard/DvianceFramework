@@ -24,6 +24,11 @@
     [super viewDidLoad];
     
     //@"INSERT INTO Table values(%d, %@, %c)", 1, @"tutu", 'd'
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:2] forKey:@"timerCounter"];
+    
+    NSNumber *c = [dict objectForKey:@"timerCounter"];
+    NSLog(@"userInfo: Timer started on %d", [c intValue]);
 	
     [_deviceNameLbl setText:[UIDevice deviceModelName]];
     [_osVersionLbl setText:[NSString stringWithFormat:@"%.1f", [UIDevice osVersion]]];
@@ -40,11 +45,18 @@
     
     NSString *dbFile = [NSString stringWithFormat:@"%@/database.db", cachePath];
     
-    SQLRequest * request = [SQLRequest requestWithSQL:@"CREATE TABLE IF NOT EXISTS 'FreeStroke.Record' ( id INTEGER PRIMARY KEY ASC AUTOINCREMENT, name TEXT, creation_date TEXT, gesture TEXT, command TEXT, command_type INTEGER, isCommandActive INTEGER DEFAULT 1, isGestureActive INTEGER DEFAULT 1, isDeleted INTEGER DEFAULT 0);;"];
+    SQLRequest * request = [SQLRequest requestWithSQL:@"CREATE TABLE IF NOT EXISTS 'Test.Record' ( id INTEGER PRIMARY KEY ASC AUTOINCREMENT, name TEXT, defaultValue INTEGER DEFAULT 0);"];
     SQLDatabase * database = [SQLDatabase databaseWithFile:dbFile];
     NSDictionary *res = [database request:request];
+    NSLog(@"Res : %@", res);
     
-    NSLog(@"%@", res);
+    request = [SQLRequest requestWithSQL:@"INSERT INTO 'Test.Record' (id, name, defaultValue) values(NULL, %s, %d);", "Test", 2];
+    res = [database request:request];
+    NSLog(@"Res : %@", res);
+    
+    request = [SQLRequest requestWithSQL:@"SELECT * FROM 'Test.Record'"];
+    res = [database request:request];
+    NSLog(@"Res : %@", res);
     
     // Throw an exception 'Not yet implemented'
     //[database close];

@@ -11,11 +11,20 @@
 
 #import "SQLRequest.h"
 
+typedef enum {
+    SQL_INTEGER = SQLITE_INTEGER,
+    SQL_FLOAT = SQLITE_FLOAT,
+    SQL_DATA = SQLITE_BLOB,
+    SQL_STRING = SQLITE_TEXT,
+    SQL_NIL = SQLITE_NULL
+} SQLType;
+
 @interface SQLDatabase : NSObject
 
 +(id)databaseWithFile:(NSString*)file;
 -(void)close;
 
 -(NSDictionary*)request:(SQLRequest*)request;
++(SQLType)typeOfValue:(id)value;
 
 @end
