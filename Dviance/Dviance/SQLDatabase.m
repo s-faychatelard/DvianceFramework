@@ -13,6 +13,8 @@
 @property (nonatomic, strong) SQLRequest *request;
 @property (nonatomic, strong) NSMutableArray *arguments;
 
+@property (readwrite) sqlite3 *sqlDatabase;
+
 @end
 
 @implementation SQLDatabase
@@ -34,6 +36,20 @@
     SQLDatabase * database = [SQLDatabase alloc];
     if (database)
     {
+        // Init and open db
+        sqlite3 *db = NULL;
+        int res = 0;
+        
+        res = sqlite3_open_v2([file UTF8String], &db, SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE, NULL);
+        
+        if (res != SQLITE_OK)
+        {
+            [database setSqlDatabase:NULL];
+            
+            [NSException raise:@"Cannot open SQLDatabase" format:@"An error occured, SQLite code %d, %s", sqlite3_errcode(db), sqlite3_errmsg(db)];
+        }
+        
+        [database setSqlDatabase:db];
     }
     return database;
 }
