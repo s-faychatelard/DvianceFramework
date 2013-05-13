@@ -20,6 +20,7 @@
 		E40F22B217253D2C0004757F /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = E40F22B017253D2C0004757F /* ViewController_iPhone.xib */; };
 		E40F22B517253D2C0004757F /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E40F22B317253D2C0004757F /* ViewController_iPad.xib */; };
 		E40F22CB17253FB40004757F /* Dviance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40F22CA17253FB40004757F /* Dviance.framework */; };
+		E4794EDC174106ED00936656 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4794EDB174106ED00936656 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		E40F22B417253D2C0004757F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		E40F22BB17253D330004757F /* Dviance.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Dviance.xcodeproj; path = ../Dviance/Dviance.xcodeproj; sourceTree = "<group>"; };
 		E40F22CA17253FB40004757F /* Dviance.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dviance.framework; path = "DerivedData/Test/Build/Products/Debug-iphonesimulator/Dviance.framework"; sourceTree = "<group>"; };
+		E4794EDB174106ED00936656 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4794EDC174106ED00936656 /* libsqlite3.dylib in Frameworks */,
 				E40F22CB17253FB40004757F /* Dviance.framework in Frameworks */,
 				E40F229617253D2C0004757F /* UIKit.framework in Frameworks */,
 				E40F229817253D2C0004757F /* Foundation.framework in Frameworks */,
@@ -97,6 +100,7 @@
 		E40F229417253D2C0004757F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E4794EDB174106ED00936656 /* libsqlite3.dylib */,
 				E40F22CA17253FB40004757F /* Dviance.framework */,
 				E40F229517253D2C0004757F /* UIKit.framework */,
 				E40F229717253D2C0004757F /* Foundation.framework */,
