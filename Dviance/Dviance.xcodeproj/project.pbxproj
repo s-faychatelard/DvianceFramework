@@ -21,7 +21,7 @@
 		E40F228417253C710004757F /* Dviance.h in Headers */ = {isa = PBXBuildFile; fileRef = E40F227D17253C710004757F /* Dviance.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E40F228517253C710004757F /* UIWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = E40F227E17253C710004757F /* UIWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E40F228617253C710004757F /* UIWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E40F227F17253C710004757F /* UIWindow.m */; };
-		E40F22CE172541850004757F /* LoadableCategory.h in Sources */ = {isa = PBXBuildFile; fileRef = E40F22CC172541450004757F /* LoadableCategory.h */; };
+		E4A0250A1742CBA10045AEA3 /* LoadableCategory.h in Sources */ = {isa = PBXBuildFile; fileRef = E40F22CC172541450004757F /* LoadableCategory.h */; };
 		E4D33AB717269E3C007885D7 /* NSURLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = E4D33AB617269E3C007885D7 /* NSURLConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E4D33AB917269E65007885D7 /* NSURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D33AB817269E65007885D7 /* NSURLConnection.m */; };
 		E4D33ABD1726B2FD007885D7 /* NSData.h in Headers */ = {isa = PBXBuildFile; fileRef = E4D33ABB1726B2FD007885D7 /* NSData.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -291,7 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E40F22CE172541850004757F /* LoadableCategory.h in Sources */,
+				E4A0250A1742CBA10045AEA3 /* LoadableCategory.h in Sources */,
 				E40F228117253C710004757F /* UIAlert.m in Sources */,
 				E40F228317253C710004757F /* UIDevice.m in Sources */,
 				E40F228617253C710004757F /* UIWindow.m in Sources */,

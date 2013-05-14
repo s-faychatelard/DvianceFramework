@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
 
-#import "SQLRequest.h"
+#import <Dviance/SQLRequest.h>
 
 typedef enum {
     SQL_INTEGER = SQLITE_INTEGER,
@@ -24,7 +24,7 @@ typedef enum {
 +(id)databaseWithFile:(NSString*)file;
 -(void)close;
 
--(NSDictionary*)request:(SQLRequest*)request;
+-(NSArray*)request:(SQLRequest*)request;
 +(SQLType)typeOfValue:(id)value;
 
 @end

@@ -22,43 +22,35 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //@"INSERT INTO Table values(%d, %@, %c)", 1, @"tutu", 'd'
-    
-    NSDictionary *dict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:2] forKey:@"timerCounter"];
-    
-    NSNumber *c = [dict objectForKey:@"timerCounter"];
-    NSLog(@"userInfo: Timer started on %d", [c intValue]);
 	
     [_deviceNameLbl setText:[UIDevice deviceModelName]];
     [_osVersionLbl setText:[NSString stringWithFormat:@"%.1f", [UIDevice osVersion]]];
-    NSData * data = [NSURLConnection getContentOfURL:[NSURL URLWithString:@"http://apple.com"] withGetData:nil];
+    
+    /*NSData * data = [NSURLConnection getContentOfURL:[NSURL URLWithString:@"http://apple.com"] withGetData:nil];
     NSString * str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     //NSLog(@"%@", str);
     
     data = [[NSData alloc] initWithContentOfURL:[NSURL URLWithString:@"http://apple.com"] andGETData:nil];
     str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", str);
+    NSLog(@"%@", str);*/
     
+    NSArray *res;
     NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSLog(@"BundlePath : %@", cachePath);
     
     NSString *dbFile = [NSString stringWithFormat:@"%@/database.db", cachePath];
+    SQLDatabase * database = [SQLDatabase databaseWithFile:dbFile];
     
     SQLRequest * request = [SQLRequest requestWithSQL:@"CREATE TABLE IF NOT EXISTS 'Test.Record' ( id INTEGER PRIMARY KEY ASC AUTOINCREMENT, name TEXT, defaultValue INTEGER DEFAULT 0);"];
-    SQLDatabase * database = [SQLDatabase databaseWithFile:dbFile];
-    NSDictionary *res = [database request:request];
-    NSLog(@"Res : %@", res);
-    
-    request = [SQLRequest requestWithSQL:@"INSERT INTO 'Test.Record' (id, name, defaultValue) values(NULL, %s, %d);", "Test", 2];
     res = [database request:request];
-    NSLog(@"Res : %@", res);
+    
+    request = [SQLRequest requestWithSQL:@"INSERT INTO 'Test.Record' (id, name, defaultValue) values(NULL, %@, %d);", @"Test", 2];
+    res = [database request:request];
     
     request = [SQLRequest requestWithSQL:@"SELECT * FROM 'Test.Record'"];
     res = [database request:request];
     NSLog(@"Res : %@", res);
     
-    // Throw an exception 'Not yet implemented'
+    // Not needed will be called during dealloc
     //[database close];
 }
 

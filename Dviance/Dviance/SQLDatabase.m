@@ -65,7 +65,7 @@
         [NSException raise:@"Cannot close SQLDatabase" format:@"An error occured, SQLite code %d, %s", sqlite3_errcode(_sqlDatabase), sqlite3_errmsg(_sqlDatabase)];
 }
 
-- (NSDictionary*)request:(SQLRequest*)request
+- (NSArray*)request:(SQLRequest*)request
 {
     _request = request;
     
@@ -82,9 +82,27 @@
     int nbParam = sqlite3_bind_parameter_count(_statement);
     for (int i=0; i<[[request arguments] count] && i<nbParam; i++)
     {
-        sqlite3_bind_value(_statement, i, CFBridgingRetain([[request arguments] objectAtIndex:i]));
+        switch ([SQLDatabase typeOfValue:[[request arguments] objectAtIndex:i]]) {
+            case SQL_INTEGER:
+                sqlite3_bind_int(_statement, i, [[[request arguments] objectAtIndex:i] intValue]);
+                break;
+            case SQL_FLOAT:
+                sqlite3_bind_double(_statement, i, [[[request arguments] objectAtIndex:i] doubleValue]);
+                break;
+            case SQL_DATA:
+                sqlite3_bind_blob(_statement, i, CFBridgingRetain([[[request arguments] objectAtIndex:i] bytes]), [[[request arguments] objectAtIndex:i] length], SQLITE_TRANSIENT);
+                break;
+            case SQL_STRING:
+                sqlite3_bind_text(_statement, i, [[[request arguments] objectAtIndex:i] UTF8String], -1, SQLITE_TRANSIENT);
+                break;
+            case SQL_NIL:
+                sqlite3_bind_value(_statement, i, CFBridgingRetain([NSNull null]));
+                break;
+        }
     }
     
+    
+    NSMutableArray *resultArray = [[NSMutableArray alloc] init];
     do
     {
         res = sqlite3_step(_statement);
@@ -113,7 +131,7 @@
                         break;
                         
                     case SQLITE_FLOAT:
-                        value = [NSNumber numberWithInteger:sqlite3_column_double(_statement, i)];
+                        value = [NSNumber numberWithDouble:sqlite3_column_double(_statement, i)];
                         NSLog(@"FLOAT : %f", [value floatValue]);
                         break;
                         
@@ -140,6 +158,8 @@
                 
                 [row setValue:value forKey:key];
             }
+            
+            [resultArray addObject:row];
         }
         else if(res != SQLITE_DONE)
         {
@@ -151,7 +171,7 @@
     
     sqlite3_finalize(_statement);
     
-    return nil;
+    return resultArray;
 }
 
 +(SQLType)typeOfValue:(id)value
@@ -160,15 +180,15 @@
     {
         return SQL_NIL;
     }
-    else if ([value isMemberOfClass:[NSString class]])
+    else if ([value isKindOfClass:[NSString class]])
     {
         return SQL_STRING;
     }
-    else if ([value isMemberOfClass:[NSData class]])
+    else if ([value isKindOfClass:[NSData class]])
     {
         return SQL_DATA;
     }
-    else if ([value isMemberOfClass:[NSNumber class]])
+    else if ([value isKindOfClass:[NSNumber class]])
     {
         CFNumberType numberType = CFNumberGetType((CFNumberRef)value);
         

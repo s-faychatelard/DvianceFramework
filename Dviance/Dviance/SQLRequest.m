@@ -38,6 +38,10 @@
             unichar caracter = [sql characterAtIndex:occurenceRange.location+1];
             
             switch (caracter) {
+                case 'p':
+                    arg = [NSNull null];
+                    va_arg(args, void*);
+                    break;
                 case '@': // %@
                     arg = va_arg(args, id);
                     break;
@@ -127,15 +131,15 @@
                     break;
             }
             
-            if (arg != nil)
-            {
+            //if (arg != nil)
+            //{
                 [requestString replaceCharactersInRange:NSMakeRange(occurenceRange.location - ([sql length] - [requestString length]), 2) withString:@"?"];
                 [[request arguments] addObject:arg];
-            }
-            else
-            {
-                [NSException exceptionWithName:@"Argument error" reason:@"Cannot parse argument" userInfo:nil];
-            }
+            //}
+            //else
+            //{
+            //    [NSException exceptionWithName:@"Argument error" reason:@"Cannot parse argument" userInfo:nil];
+            //}
             
             @try
             {
