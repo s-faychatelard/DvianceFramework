@@ -79,27 +79,44 @@
         [NSException raise:@"Cannot prepare SQLRequest" format:@"An error occured, SQLite code %d, %s", sqlite3_errcode(_sqlDatabase), sqlite3_errmsg(_sqlDatabase)];
     }
     
+    NSString *cutRequest = [request request];
+    int paramIndex = 0;
     int nbParam = sqlite3_bind_parameter_count(_statement);
     for (int i=0; i<[[request arguments] count] && i<nbParam; i++)
     {
+        NSRange rangeNull = [cutRequest rangeOfString:@"NULL"];
+        NSRange rangeParam = [cutRequest rangeOfString:@"?"];
+        while (rangeNull.location < rangeParam.location)
+        {
+            paramIndex++;
+            cutRequest = [cutRequest substringFromIndex:(rangeNull.location + rangeNull.length)];
+            
+            rangeNull = [cutRequest rangeOfString:@"NULL"];
+            rangeParam = [cutRequest rangeOfString:@"?"];
+        }
+        
+        NSLog(@"%d", paramIndex);
         switch ([SQLDatabase typeOfValue:[[request arguments] objectAtIndex:i]]) {
             case SQL_INTEGER:
-                sqlite3_bind_int(_statement, i, [[[request arguments] objectAtIndex:i] intValue]);
+                sqlite3_bind_int(_statement, paramIndex, [[[request arguments] objectAtIndex:i] intValue]);
                 break;
             case SQL_FLOAT:
-                sqlite3_bind_double(_statement, i, [[[request arguments] objectAtIndex:i] doubleValue]);
+                sqlite3_bind_double(_statement, paramIndex, [[[request arguments] objectAtIndex:i] doubleValue]);
                 break;
             case SQL_DATA:
-                sqlite3_bind_blob(_statement, i, CFBridgingRetain([[[request arguments] objectAtIndex:i] bytes]), [[[request arguments] objectAtIndex:i] length], SQLITE_TRANSIENT);
+                sqlite3_bind_blob(_statement, paramIndex, CFBridgingRetain([[[request arguments] objectAtIndex:i] bytes]), [[[request arguments] objectAtIndex:i] length], SQLITE_TRANSIENT);
                 break;
             case SQL_STRING:
-                sqlite3_bind_text(_statement, i, [[[request arguments] objectAtIndex:i] UTF8String], -1, SQLITE_TRANSIENT);
+                sqlite3_bind_text(_statement, paramIndex, [[[request arguments] objectAtIndex:i] UTF8String], -1, SQLITE_TRANSIENT);
                 break;
             case SQL_NIL:
-                sqlite3_bind_null(_statement, i);
+                sqlite3_bind_null(_statement, paramIndex);
 //                sqlite3_bind_value(_statement, i, NULL/*CFBridgingRetain([NSNull null])*/);
                 break;
         }
+        
+        cutRequest = [cutRequest substringFromIndex:(rangeParam.location + rangeParam.length)];
+        paramIndex++;
     }
     
     
