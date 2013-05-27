@@ -96,7 +96,8 @@
                 sqlite3_bind_text(_statement, i, [[[request arguments] objectAtIndex:i] UTF8String], -1, SQLITE_TRANSIENT);
                 break;
             case SQL_NIL:
-                sqlite3_bind_value(_statement, i, CFBridgingRetain([NSNull null]));
+                sqlite3_bind_null(_statement, i);
+//                sqlite3_bind_value(_statement, i, NULL/*CFBridgingRetain([NSNull null])*/);
                 break;
         }
     }

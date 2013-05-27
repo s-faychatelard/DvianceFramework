@@ -43,7 +43,7 @@
     SQLRequest * request = [SQLRequest requestWithSQL:@"CREATE TABLE IF NOT EXISTS 'Test.Record' ( id INTEGER PRIMARY KEY ASC AUTOINCREMENT, name TEXT, defaultValue INTEGER DEFAULT 0);"];
     res = [database request:request];
     
-    request = [SQLRequest requestWithSQL:@"INSERT INTO 'Test.Record' (id, name, defaultValue) values(NULL, %@, %d);", @"Test", 2];
+    request = [SQLRequest requestWithSQL:@"INSERT INTO 'Test.Record' (id, name, defaultValue) values(%p, %@, %d);", NULL,@"Test", 2];
     res = [database request:request];
     
     request = [SQLRequest requestWithSQL:@"SELECT * FROM 'Test.Record'"];
